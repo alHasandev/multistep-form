@@ -1,0 +1,142 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --btn-bg-color: #aaaaaa;
+  --btn-text-color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+form {
+  position: relative;
+  max-width: 480px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2.5rem, 1fr));
+  grid-template-rows: auto auto;
+  justify-items: center;
+  counter-reset: css-counter 0;
+}
+
+.card {
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+.step-form {
+  display: none;
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #2d3436;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #6c5ce7;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border: var(--btn-bg-color);
+  outline: none;
+}
+
+.btn-primary {
+  --btn-bg-color: #6c5ce7;
+  --btn-text-color: #dfe6e9;
+}
+
+.btn-secondary {
+  --btn-bg-color: #dfe6e9;
+  --btn-text-color: #2d3436;
+}
+
+input[type="radio"] {
+  /* position: relative; */
+  display: block;
+  visibility: hidden;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  counter-increment: css-counter 1;
+}
+
+input[type="radio"]::before {
+  content: counter(css-counter);
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: white;
+  color: #2d3436;
+  border: 1px solid #2d3436;
+  border-radius: 0.25rem;
+}
+
+form::before {
+  content: "";
+  z-index: -1;
+  top: 1.3rem;
+  visibility: visible;
+  border: 2px solid #6c5ce7;
+  position: absolute;
+  width: 100%;
+}
+
+input[type="radio"]:checked::before {
+  background-color: #6c5ce7;
+  border-color: #6c5ce7;
+  color: white;
+}
+
+input[type="radio"]:checked + .step-form {
+  display: block;
+}

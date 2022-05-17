@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multistep Form - CSS Only</title>
+
+    <!-- Link to css file -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Multistep Form - CSS Only</h1>
+    <form action="" method="post">
+      <!-- Step 1 -->
+      <input type="radio" name="step" id="step-1" checked />
+      <div class="card step-form">
+        <h2>Create Your Account</h2>
+        <p>This is step 1</p>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+          />
+        </div>
+        <label role="button" class="btn btn-primary" for="step-2">Next</label>
+      </div>
+
+      <!-- Step 2 -->
+      <input type="radio" name="step" id="step-2" />
+      <div class="card step-form">
+        <h2>Social Profiles</h2>
+        <p>This is step 2</p>
+
+        <div class="form-group">
+          <label for="twitter">Twitter</label>
+          <input type="text" name="twitter" id="twitter" />
+        </div>
+        <div class="form-group">
+          <label for="facebook">Facebook</label>
+          <input type="text" name="facebook" id="facebook" />
+        </div>
+        <div class="form-group">
+          <label for="google-plus">Google Plus</label>
+          <input type="text" name="google-plus" id="google-plus" />
+        </div>
+        <label class="btn btn-secondary" for="step-1">Previous</label>
+        <label role="button" class="btn btn-primary" for="step-3">Next</label>
+      </div>
+
+      <!-- Step 6 -->
+      <input type="radio" name="step" id="step-3" />
+      <div class="card step-form">
+        <h2>Personal Detail</h2>
+        <p>This is final step</p>
+
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" name="first-name" id="first-name" />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" name="last-name" id="last-name" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="number" name="phone" id="phone" />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea name="address" id="address"></textarea>
+        </div>
+        <label class="btn btn-secondary" for="step-2">Previous</label>
+        <button role="button" class="btn btn-primary" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
